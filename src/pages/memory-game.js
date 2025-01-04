@@ -45,7 +45,7 @@ export default function MemoryGame() {
                             return newTiles;
                         });
                         setScore((prevScore) => prevScore + 1); // Increase score for correct match
-                    }, 1000);                 
+                    }, 300);                 
                 }   
             }
     }
