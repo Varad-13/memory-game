@@ -68,6 +68,7 @@ export default function MemoryGame() {
         if(isGameStarted) {
         if(tiles.every(tile => tile ===null)) {
             alert(`You won! Time: ${timer}, Moves: ${moves}, Score: ${score}`)
+            setisGameStarted(false)
         }
         }
     }, [tiles, isGameStarted])
@@ -90,16 +91,18 @@ export default function MemoryGame() {
                         {tiles.map((tile, index) => (
                             <button 
                                 key={index}
-                                className="bg-yellow-200 text-rose-600 aspect-square p-20 rounded-3xl text-3xl border border-rose-600 ring-0 focus:ring-2 focus:ring-rose-600 hover:bg-gray-300 transition-all duration-300 ease-in-out"
+                                className={`bg-yellow-200 text-rose-900 aspect-square p-20 rounded-3xl text-3xl border border-rose-600 ring-0 focus:ring-2 focus:ring-rose-600 hover:bg-gray-300 transition-all duration-300 ease-in-out 
+                                    ${tile === null ? 'bg-gray-300 cursor-not-allowed text-gray-300' : 'bg-yellow-200 hover:bg-gray-300'}`}
                                 onClick={() => {flipTile(index)}}
+                                disabled={tile === null}  
                             >
                                 {
                                 flippedTiles.includes(index) ?
-                                <span className='material-icons'>  
+                                <span className='material-icons text-rose-600'>  
                                     {tile} 
                                 </span>
                                 : 
-                                <span className='material-icons text-rose-900'>  
+                                <span className='material-icons'>  
                                     X
                                 </span>
                                 }
