@@ -35,6 +35,7 @@ export default function MemoryGame() {
             console.log(firstTile, secondTile)
             if (firstTile != null && secondTile != null) {
                 if (firstTile != secondTile) {
+
                 } else {
                     setScore((prevScore) => prevScore+1)
                     setTimeout(() => {
@@ -45,7 +46,7 @@ export default function MemoryGame() {
                             return newTiles;
                         });
                         setScore((prevScore) => prevScore + 1); // Increase score for correct match
-                    }, 300);
+                    }, 50);
                 }
             }
     }
