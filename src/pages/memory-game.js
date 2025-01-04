@@ -91,8 +91,8 @@ export default function MemoryGame() {
                         {tiles.map((tile, index) => (
                             <button 
                                 key={index}
-                                className={`bg-yellow-200 text-rose-900 aspect-square p-20 rounded-3xl text-3xl border border-rose-600 ring-0 focus:ring-2 focus:ring-rose-600 hover:bg-gray-300 transition-all duration-300 ease-in-out 
-                                    ${tile === null ? 'bg-gray-300 cursor-not-allowed text-gray-300' : 'bg-yellow-200 hover:bg-gray-300'}`}
+                                className={`aspect-square p-20 rounded-3xl text-3xl border border-rose-600 ring-0 focus:ring-2 focus:ring-rose-600 transition-all duration-300 ease-in-out 
+                                    ${tile == null ? 'bg-gray-300 cursor-not-allowed text-gray-300 border-0' : 'bg-yellow-200 text-rose-900 hover:bg-yellow-100'}`}
                                 onClick={() => {flipTile(index)}}
                                 disabled={tile === null}  
                             >
